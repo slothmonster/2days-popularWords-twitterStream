@@ -16,7 +16,7 @@ exports.parseText = function(tweet, callback){
 };
 
 exports.stripAllTheThings = function(tweet, callback){
-  var stripped = tweet.replace(/\b[a-zA-z]{1,3}\b/g, "");
+  var stripped = tweet.replace(/\b[a-zA-z]{1,1}\b/g, "");
   stripped = stripped.replace(/(^|[^@\w])@(\w{1,15})\b/g,"");
   stripped = stripped.replace(/[\\.,\-\/#!\$%\^&\*;:{}=\-_`~()\'\"?@+><\[\]]/g,"");
   stripped = stripped.replace(/(\s{2,})|(^\s)/g, "");
