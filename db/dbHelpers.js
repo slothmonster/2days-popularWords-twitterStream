@@ -21,11 +21,13 @@ exports.updateOrInsert = function(word){
   });
 };
 
-
-// db.mycollection.findAndModify({
-//     query: { name: 'mathias' },
-//     update: { $set: { tag:'maintainer' } },
-//     new: true
-// }, function(err, doc, lastErrorObject) {
-//     // doc.tag === 'maintainer'
-// });
+exports.fetchTopTwentyWords = function(callback){
+  db.words.find({count:{$gt: 2}}).limit(20, function(err, docs){
+    if(err){
+      console.log("we got an error trying to retrieve top 20 records: " + err);
+    } else {
+      // console.log("we should be sending back these docs: " + docs);
+      callback(docs);
+    }
+  });
+};

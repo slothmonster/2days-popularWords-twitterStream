@@ -2,6 +2,7 @@
 logs
 *.log
 warningLog.txt
+archiveLog.txt
 
 # Runtime data
 pids
@@ -15,4 +16,5 @@ node_modules
 
 # configs
 env_config.js
+
 
